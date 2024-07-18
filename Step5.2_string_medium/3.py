@@ -1,0 +1,55 @@
+while num > 0:
+    if num >= 1000:
+        out = num // 1000
+        output += 'M'*out
+        num = num % 1000
+    elif num >= 900 and num < 1000:
+        out = num // 900
+        output += 'CM'*out
+        num = num % 900
+    elif num >= 500 and num < 900:
+        out = num // 500
+        output += 'D'*out
+        num = num % 500
+    elif num >= 400 and num < 500:
+        out = num // 400
+        output += 'CD'*out
+        num = num % 400
+    elif num >= 100 and num < 400:
+        out = num // 100
+        output += 'C'*out
+        num = num % 100
+    elif num >= 90 and num < 100:
+        out = num // 90
+        output += 'XC'*out
+        num = num % 90
+    elif num >= 50 and num < 90:
+        out = num // 50
+        output += 'L'*out
+        num = num % 50
+    elif num >= 40 and num < 50:
+        out = num // 40
+        output += 'XL'*out
+        num = num % 40
+    elif num >= 10 and num < 40:
+        out = num // 10
+        output += 'X'*out
+        num = num % 10
+    elif num >= 9 and num < 10:
+        out = num // 9
+        output += 'IX'*out
+        num = num % 9
+    elif num >= 5 and num < 9:
+        out = num // 5
+        output += 'V'*out
+        num = num % 5
+    elif num >= 4 and num < 5:
+        out = num // 4
+        output += 'IV'*out
+        num = num % 4
+    else:
+        out = num // 1 
+        output += 'I'*out
+        num = num % 1
+        
+print(output)
