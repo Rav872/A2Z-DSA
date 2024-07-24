@@ -2,13 +2,12 @@
 
 def balance_parenthesis(s):
     stk = []
-    count = 0
     i = 0
     while i < len(s):
         if s[i] == '{' or s[i] == '(' or s[i] == '[':
             stk.append(s[i])
         if stk:
-            if s[i] == '}' or s[i] == ')' or s[i] == ']':
+            if (s[i] == ')' and stk[-1] == '(') or (s[i] == '}' and stk[-1] == '{') or (s[i] == ']' and stk[-1] == '['): # stk[-1] means stk[top]
                 stk.pop()
         else:
             return False
@@ -16,5 +15,5 @@ def balance_parenthesis(s):
     return len(stk) == 0
 
 # s = "()[{()}]"
-s = ")))((("
+s = "{[({[]})]}"
 print(balance_parenthesis(s))
