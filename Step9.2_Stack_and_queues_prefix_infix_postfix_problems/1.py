@@ -5,9 +5,7 @@
 # equation should make fully parenthesis using parenthesisation(precedence)
 
 def get_symbol_precedence(prec, chr):
-    for key,val in prec.items():
-        if key == chr:
-            return val
+    return prec.get(chr, 0)
 
 def infix_to_postfix(s, stk, prec):
     i = 0
