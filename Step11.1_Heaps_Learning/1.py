@@ -1,43 +1,10 @@
 """
-Description: Learning Binary heaps
-Heap : Complete binary tree or almost complete, 
-Conditions: i) Binary heap are represented using array
-            ii) Every node have element greater that or equal to its decendants, duplicates are allowed
-            iii) Mean heap and max heap, height of tree will be log(n) only
-            iv) Heap is not useful for searching purpose
-Node at index i
-Left child at 2 * i
-Right child at 2 * i + 1
-
-# Inserting in a max heap : In a heap always insert in a free space
-                    30
-            20              15
-        5       10     12        6
-Now we have to insert 40 in upper tree
-
-arr = 30, 20, 15, 5, 10, 12, 6 .. .. .. 
-So next free space is after 6, we will insert after 6
-arr = 30, 20, 15, 5, 10, 12, 6 40 .. ..
-
-Insert algo:
-    call algo after inserting element at free space
-    Takes log(n) time
-Creating heap algo: O(nlogn)
-    It is inplace heap
-    call insert function for each element
-Deleting from heap:O(nlogn)
-    we are using max heap here so only can delete maximum element or can say highest priority element
-    Approach is delete the max element and readjust it to max heap again
-    Compare the children and if greater than interchange with parent
-Heap sort:O(nlogn)
-    i) Create heap of n elements
-    ii) Delete n elements 1 by 1
+Description: Implementation of priority queue using Binary Heap
 """
+def insert(arr, index):
+    i = index
+    temp = arr[index]
 
-def insert(arr, N):
-    i = N
-    temp = arr[N]
-    
     while i > 0 and temp > arr[(i-1)//2]:
         arr[i] = arr[(i-1)//2]
         i = (i-1) // 2
@@ -47,42 +14,40 @@ def createHeap(arr):
     for i in range(1, len(arr)):
         insert(arr, i)
 
-def deleteFromHeap(arr, N):
-    i = 0
-    temp = arr[0]
-    arr[0] = arr[N-1]  # Move the last element to the root
-    N -= 1  # Reduce the heap size
-    
-    while True:
-        left = 2*i + 1
-        right = 2*i + 2
-        largest = i
-        
-        if left < N and arr[left] > arr[largest]:
-            largest = left
-        if right < N and arr[right] > arr[largest]:
-            largest = right
-        
-        if largest == i:
-            break
-        
-        arr[i], arr[largest] = arr[largest], arr[i]
-        i = largest
+def heapify_down(arr, index, heap_size):
+    largest = index
+    left_child = 2*index + 1
+    right_child = 2*index + 2
 
-    arr[N] = temp
+    if left_child < heap_size and arr[left_child] > arr[largest]:
+        largest = left_child
+    if right_child < heap_size and arr[right_child] > arr[largest]:
+        largest = right_child
+    if largest != index:
+        arr[index], arr[largest] = arr[largest], arr[index]
+        heapify_down(arr, largest, heap_size)
 
-def heapSort():
-    arr = [10,20,30,25,5,40,35]
-    createHeap(arr)
-    print("Max heap array: ", arr)
+def deleteHeap(arr):
+    heap_size = len(arr)
+    if not heap_size:
+        return None
+    arr[0], arr[heap_size-1] = arr[heap_size-1], arr[0]
 
-    for i in range(len(arr), 0, -1):
-        deleteFromHeap(arr, i)  # Re-heapify the reduced heap
-    
-    print("Sorted array: ", arr)
+    # remove the last element:
+    arr.pop()
+    heapify_down(arr, 0, len(arr))
 
 def main():
-    heapSort()
+    arr = [4,2,8,16,24,6,5]
+    # Convert array to max heap and delete first maximum which is always root
+    # Without max heap insertion is O(n) but deletion is find item first and then delete which takes O(nlogn)
+    # After creating to max heap we know it will max take O(logn) to delete max item which is root
+    createHeap(arr)
+    print("Max heap: ", arr)
+    deleteHeap(arr)
+    deleteHeap(arr)
+    print("Max heap after deleting element: ", arr)
+    pass
 
 if __name__ == "__main__":
     main()
