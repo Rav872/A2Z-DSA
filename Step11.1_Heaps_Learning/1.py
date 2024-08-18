@@ -76,8 +76,7 @@ def heapSort():
     createHeap(arr)
     print("Max heap array: ", arr)
 
-    for i in range(len(arr)-1, 0, -1):
-        arr[0], arr[i] = arr[i], arr[0]  # Swap root with the last element
+    for i in range(len(arr), 0, -1):
         deleteFromHeap(arr, i)  # Re-heapify the reduced heap
     
     print("Sorted array: ", arr)
