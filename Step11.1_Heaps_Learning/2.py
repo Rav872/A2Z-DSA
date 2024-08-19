@@ -63,8 +63,5 @@ def main():
     print("Extracted Min:", min_element)  # 1
     print("Heap after extraction:", arr)  # [4, 5]
 
-main()
-
-
 if __name__ == "__main__":
     main()
