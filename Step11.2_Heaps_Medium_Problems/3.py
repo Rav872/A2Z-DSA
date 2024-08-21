@@ -1,5 +1,5 @@
 """
-Description: Merge k sorted array
+Description: Sort k sorted array
 """
 
 def insert(min_heap, num):
