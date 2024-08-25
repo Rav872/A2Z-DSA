@@ -1,5 +1,5 @@
 """
-Description: Binary tree representation in python
+Description: Binary tree representation in python, similar like C++, python
 """
 
 class Node:
