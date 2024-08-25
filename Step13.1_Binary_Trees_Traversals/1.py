@@ -2,8 +2,8 @@
 Description: Introduction to Binary Tree, Count number of node in binaryTree with h height
 
 Binary Tree Representation:
-A binary tree is a type of data structure in which each node has at most two children.
-These children are referred to as the left child and the right child.
+    A binary tree is a type of data structure in which each node has at most two children.
+    These children are referred to as the left child and the right child.
 Types of Binary Trees:
 1. Full Binary Tree: Every node has either 0 or 2 children.
 
