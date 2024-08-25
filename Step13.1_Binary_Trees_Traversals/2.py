@@ -43,7 +43,7 @@ class BinaryTree:
 class MyClass:
     def __init__(self):
         # Initialize variables
-        self.nodes = [1,2,4,12,7,3,21,11,9]
+        self.nodes = [1,2,4,12,7,3,21,11,9,10]
         self.root_node = Node(1)
         self.BT = BinaryTree(self.root_node, self.nodes)
 
