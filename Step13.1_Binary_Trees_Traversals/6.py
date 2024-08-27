@@ -1,5 +1,5 @@
 """
-Description: Inorder traversal
+Description: Binary tree Inorder traversal
 """
 
 class Node:
