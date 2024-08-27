@@ -1,5 +1,5 @@
 """
-Description: Preoder traversal
+Description: Binary tree Preoder traversal
 """
 
 class Node:
