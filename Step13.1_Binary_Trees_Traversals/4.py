@@ -1,6 +1,7 @@
 """
 Description: Binary tree traversal(Inorder, preorder, postorder, levelorder)
 """
+
 class Node:
     def __init__(self, value):
         self.value = value
