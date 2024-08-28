@@ -1,5 +1,5 @@
 """
-Description: Post order traversal
+Description: Binary tree post order traversal
 """
 
 class Node:
