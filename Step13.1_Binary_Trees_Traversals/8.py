@@ -1,5 +1,5 @@
 """
-Description: Binary tree traversal(Inorder, preorder, postorder, levelorder)
+Description: Binary tree level order traversal
 """
 
 class Node:
