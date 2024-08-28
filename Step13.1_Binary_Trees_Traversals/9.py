@@ -1,5 +1,5 @@
 """
-Description: Iterative preorder traversal of binary tree
+Description: Iterative pre-order traversal of binary tree
 """
 
 class Node:
