@@ -1,5 +1,5 @@
 """
-Description: Postorder traversal using 1 stack
+Description: Check if binary tree balanced
 """
 
 class Node:
