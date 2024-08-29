@@ -1,7 +1,6 @@
 """
-Description: Postorder traversal using 1 stack
+Description: Height of a binary tree
 """
-
 class Node:
     def __init__(self, value):
         self.value = value
