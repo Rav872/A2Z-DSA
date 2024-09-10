@@ -42,18 +42,20 @@ class BST:
 
     def binary_search(self, element):
         if self.root is None:
-            return False
+            return
         else:
             return self._binary_search(self.root, element)
 
     def _binary_search(self, root, element):
-        if element == root.data:
-            return True
-        elif element < root.data:
-            return self._binary_search(root.left, element)
+        if root:
+            if element == root.data:
+                return True
+            elif element < root.data:
+                return self._binary_search(root.left, element)
+            else:
+                return self._binary_search(root.right, element)
         else:
-            return self._binary_search(root.right, element)
-
+            return False
 
 def main():
     bst = BST()
