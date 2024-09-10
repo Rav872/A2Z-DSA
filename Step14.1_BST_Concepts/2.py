@@ -1,3 +1,9 @@
+
+"""
+Description: Search item in binary search tree
+
+"""
+
 class Node:
     def __init__(self, data):
         self.data = data
