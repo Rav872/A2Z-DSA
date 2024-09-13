@@ -1,6 +1,6 @@
 
 """
-Description: Kth maximum in a binary tree, for kth minimum use inorder traversal
+Description: Kth maximum in a binary search tree, for kth minimum use inorder traversal
 
 """
 
